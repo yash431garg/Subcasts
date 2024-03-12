@@ -7,8 +7,8 @@ import "./globals.css";
 const roboto = Roboto({ subsets: ["latin"], weight: ['300'] });
 
 export const metadata: Metadata = {
-  title: "Superteam Warpcast",
-  description: "Checkout superteam Frames on Warpcast",
+  title: "Subcasts",
+  description: "Create you own blog cast",
 };
 
 export default function RootLayout({

@@ -8,6 +8,7 @@ export async function middleware(request: NextRequest) {
   const isPublicPath = path === '/login' || path === '/signup';
 
   const session = await getSession();
+
   // console.log(session, isPublicPath);
 
   // if (isPublicPath && session) {
@@ -26,7 +27,7 @@ export const config = {
     '/casts',
     '/api/query_blogs/:path*',
     '/api/query_blogs_link/:path*',
-    '/api/subscribe/:path*',
+    // '/api/subscribe/:path*',
     // '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };

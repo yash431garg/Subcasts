@@ -21,13 +21,9 @@ export async function POST(
 
   const body: FrameRequest = await req.json();
 
-  const { isValid, message } = await getFrameMessage(body, {
+  const { message } = await getFrameMessage(body, {
     neynarApiKey: 'NEYNAR_ONCHAIN_KIT',
   });
-
-  if (isValid) {
-    accountAddress = message.interactor.verified_accounts[0];
-  }
 
   if (message?.input) {
     const inputText = message.input;
@@ -37,7 +33,26 @@ export async function POST(
 
     if (isEmailValid) {
       // Store the email in the Supabase database'
-      await supabase.from('subscription').insert({ email: inputText });
+      const res = await supabase.from('subscription').insert({
+        email: inputText,
+        fid: message.interactor.fid,
+      });
+      if (res.error) {
+        return new NextResponse(
+          getFrameHtmlResponse({
+            buttons: [
+              {
+                label: `Go back: ${res.error?.details}`,
+              },
+            ],
+            image: {
+              src: `${NEXT_PUBLIC_URL}/already.png`,
+              aspectRatio: '1:1',
+            },
+            postUrl: `${body.untrustedData.url}/`,
+          })
+        );
+      }
       return new NextResponse(
         getFrameHtmlResponse({
           buttons: [

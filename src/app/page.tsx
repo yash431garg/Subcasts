@@ -16,40 +16,6 @@ function isValidUrl(url: string): boolean {
     return false;
   }
 }
-
-//     {
-//       action: 'post',
-//       label: 'Subscribe',
-//     },
-//     {
-//       action: 'link',
-//       label: 'Read Online',
-//       target: 'https://superteam.substack.com/p/state-of-solana-depin-2024',
-//     },
-//   ],
-//   image: {
-//     src: `https://substackcdn.com/image/fetch/w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfee7a1a-7972-40d3-bcbb-25f90af1ddb5_2400x1350.png`,
-//     aspectRatio: '1:1',
-//   },
-//   input: {
-//     text: 'Please enter your email',
-//   },
-//   postUrl: `${NEXT_PUBLIC_URL}/api/subscribe`,
-// });
-
-// export const metadata: Metadata = {
-//   title: 'Farcaster and Solana',
-//   description: 'Five ideas for frames that are OPOS.',
-//   openGraph: {
-//     title: 'Farcaster and Solana',
-//     description: 'Five ideas for frames that are OPOS.',
-//     images: "https://substackcdn.com/image/fetch/w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfee7a1a-7972-40d3-bcbb-25f90af1ddb5_2400x1350.png",
-//   },
-//   other: {
-//     ...frameMetadata,
-//   },
-
-// };
 export default function Home() {
   interface Result {
     img: string

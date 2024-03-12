@@ -4,13 +4,15 @@ import { getSession, login, logout } from '@/lib';
 
 export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
+  // console.log(path);
   const isPublicPath = path === '/login' || path === '/signup';
 
   const session = await getSession();
+  // console.log(session, isPublicPath);
 
-  if (isPublicPath && session) {
-    return NextResponse.redirect(new URL('/', request.nextUrl));
-  }
+  // if (isPublicPath && session) {
+  //   return NextResponse.redirect(new URL('/', request.nextUrl));
+  // }
 
   if (!isPublicPath && !session) {
     return NextResponse.redirect(new URL('/login', request.nextUrl));
@@ -25,7 +27,6 @@ export const config = {
     '/api/query_blogs/:path*',
     '/api/query_blogs_link/:path*',
     '/api/subscribe/:path*',
-    `/frames/:id`,
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    // '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };

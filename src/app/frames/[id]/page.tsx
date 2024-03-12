@@ -1,5 +1,4 @@
 
-import Header from "../../components/Header/Header"
 import type { Metadata, ResolvingMetadata } from 'next'
 import { supabase } from '../../lib/supabase'
 
@@ -44,11 +43,11 @@ export async function generateMetadata(
 
 
   return {
-    title: 'Superteam Warpcast',
-    description: 'Checkout superteam Frames on Warpcast.',
+    title: 'Subcasts',
+    description: 'Create your own casts.',
     openGraph: {
-      title: 'Superteam Warpcast',
-      description: 'Checkout superteam Frames on Warpcast.',
+      title: 'Subcasts',
+      description: 'Create your own casts.',
       images: `${blogPost?.image_link}`,
     },
     other:
@@ -71,9 +70,8 @@ export async function generateMetadata(
 export default function Page({ params }: { params: { id: string } }) {
 
   return <div>
-    <Header />
-    <p className="ml-5 text-lg">
-      You can cast you blog on warpcast
+    <p className="ml-5 mt-5 text-lg">
+      Happy Casting!
     </p>
   </div>
 }

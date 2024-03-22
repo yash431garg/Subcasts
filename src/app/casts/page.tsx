@@ -26,6 +26,7 @@ function page() {
       }
     })
     const json = await response.json()
+
     if (response.ok) { setBlogs(json); setIsLoading(false) }
   }
 

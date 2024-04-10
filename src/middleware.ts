@@ -6,7 +6,7 @@ export const config = {
     '/casts',
     '/api/query_blogs/:path*',
     '/api/query_blogs_link/:path*',
-    // '/api/subscribe/:path*',
-    // '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/subscribers/:id*',
+    '/api/query_subscribers/:path*',
   ],
 };

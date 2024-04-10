@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import className from './casts.module.css'
 import Header from '../components/Header/Header';
 import Spinnner from '../components/Spinner/Spinnner';
+import Copyclip from '../utils/Copyclip';
 
-const NEXT_PUBLIC_URL = process.env.APP_URL || ''
+const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_APP_URL || ''
 
 function page() {
 
@@ -42,6 +43,7 @@ function page() {
       {loading && <Spinnner />}
       <div className={className.blogGrid}>
         {blogs?.map((item: IDataModel) => {
+          console.log(item)
           return (
             <div key={item?.id} className={`${className.blogItem} `}>
               <div>
@@ -49,12 +51,14 @@ function page() {
                 <span className="">{item?.blog}</span>
               </div>
               <a
-                href={NEXT_PUBLIC_URL + `/frames/` + item?.id}
+                href={NEXT_PUBLIC_URL + `/subscribers/` + item?.id}
                 rel="noopener noreferrer"
                 className="font-extrabold"
               >
-                ↗️ {item?.id}
+                ↗️ All Registrations  {item?.id}
               </a>
+              <Copyclip id={String(item?.id)} />
+
             </div>
           );
         })}

@@ -104,6 +104,9 @@ export default function Home() {
       {loading && <Spinnner />}
       {linkResult &&
         <div className={` shadow--3xl mt-10 flex flex-col justify-center items-center`}>
+          <p className="w-6/12 mb-5">
+            {linkResult?.description}
+          </p>
           <img src={linkResult?.img} className="w-8/12 sm:w-4/12" />
           <button
             onClick={() => { savePost() }}

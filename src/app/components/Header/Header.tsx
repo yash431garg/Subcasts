@@ -13,6 +13,8 @@ export default function Header() {
         <div className={classname.header}>
             <Link href="/" className='text-2xl'>Subcasts</Link>
             <div className={classname.headerRight}>
+                <Link href="https://www.superframe.events/" target='__blank'>Cast Event (New)</Link>
+                <Link href="/casts">Create Casts</Link>
                 <Link href="/casts">All Casts</Link>
                 <button onClick={() => signOut()} className='text-red-600 border-1 p-2 rounded border-red-600'>
                     Logout

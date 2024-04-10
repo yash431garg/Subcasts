@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
     id: id,
     blog: data.blogLink,
     image_link: data.linkResult.img,
+    description: data?.linkResult?.description,
     user_email: session?.user?.email,
   }); // This contains the data sent in the POST request
 
